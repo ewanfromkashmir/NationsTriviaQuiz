@@ -1,16 +1,26 @@
 package com.example.javafxsceneswitcher;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
-public class HelloController
+import java.io.IOException;
+
+public class SceneOneController
 {
     @FXML
-    private Label welcomeText;
+    private Button btnSwitch2;
 
     @FXML
-    protected void onHelloButtonClick()
+    private void switchToScene2() throws IOException
     {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("scene2-view.fxml"));
+        Stage stage = (Stage) btnSwitch2.getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        stage.setTitle("Scene Two");
+        stage.setScene(scene);
+        stage.show();
     }
 }
