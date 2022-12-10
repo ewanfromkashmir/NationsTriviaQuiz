@@ -11,15 +11,15 @@ import java.io.IOException;
 public class SceneTwoController
 {
     @FXML
-    private Button btnSwitch1;
+    private Button btnSwitch3;
 
     @FXML
-    private void switchToScene1() throws IOException
+    private void switchToScene3() throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("scene1-view.fxml"));
-        Stage stage = (Stage) btnSwitch1.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("scene3-view.fxml"));
+        Stage stage = (Stage) btnSwitch3.getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(), 400, 400);
-        stage.setTitle("Scene One");
+        stage.setTitle("Scene Three");
         stage.setScene(scene);
         stage.show();
     }
